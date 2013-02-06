@@ -3,7 +3,7 @@
  * Date: 2/6/13
  * Time: 10:49 AM
  */
-package {
+package items {
 
 	import items.core.GameObject;
 
@@ -16,7 +16,7 @@ package {
 		}
 
 		override public function init():GameObject {
-			name = "Car";
+			name = "items.Car";
 			return super.init();
 		}
 	}

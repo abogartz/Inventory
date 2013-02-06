@@ -3,6 +3,9 @@ package {
 	import flash.display.Sprite;
 	import flash.text.TextField;
 
+	import items.Car;
+	import items.Key;
+
 	import items.core.Inventory;
 
 	public class InventoryTester extends Sprite {
@@ -17,22 +20,22 @@ package {
 			inventory.add(new Car().init());
 			inventory.add(new Key().init());
 
-			inventory.toggleState("Car", Car.LOCKED);
-			inventory.toggleState("Key", Key.MISSING);
+			inventory.toggleState("items.Car", Car.LOCKED);
+			inventory.toggleState("items.Key", Key.MISSING);
 
-			textField.text+="Open car? "+inventory.status("Car", Car.UNLOCKED)+"\n";
+			textField.text+="Open car? "+inventory.status("items.Car", Car.UNLOCKED)+"\n";
 
-			inventory.toggleState("Key", Key.FOUND);
-			inventory.toggleState("Key", Key.MISSING);
+			inventory.toggleState("items.Key", Key.FOUND);
+			inventory.toggleState("items.Key", Key.MISSING);
 
-			textField.text+="Open car? "+inventory.status("Car", Car.UNLOCKED)+"\n";
+			textField.text+="Open car? "+inventory.status("items.Car", Car.UNLOCKED)+"\n";
 
-			if(inventory.status("Key", Key.FOUND)){
-				inventory.toggleState("Car", Car.LOCKED);
-				inventory.toggleState("Car", Car.UNLOCKED);
+			if(inventory.status("items.Key", Key.FOUND)){
+				inventory.toggleState("items.Car", Car.LOCKED);
+				inventory.toggleState("items.Car", Car.UNLOCKED);
 			}
 
-			textField.text+="Open car? "+inventory.status("Car", Car.UNLOCKED)+"\n";
+			textField.text+="Open car? "+inventory.status("items.Car", Car.UNLOCKED)+"\n";
 
 		}
 	}
