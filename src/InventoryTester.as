@@ -20,19 +20,19 @@ package {
 			inventory.toggleState("Car", Car.LOCKED);
 			inventory.toggleState("Key", Key.MISSING);
 
-			textField.text+="Open car? "+inventory.status("Car", Car.UNLOCKED|Key.FOUND)+"\n";
+			textField.text+="Open car? "+inventory.status("Car", Car.UNLOCKED)+"\n";
 
 			inventory.toggleState("Key", Key.FOUND);
 			inventory.toggleState("Key", Key.MISSING);
 
-			textField.text+="Open car? "+inventory.status("Car", Car.UNLOCKED|Key.FOUND)+"\n";
+			textField.text+="Open car? "+inventory.status("Car", Car.UNLOCKED)+"\n";
 
 			if(inventory.status("Key", Key.FOUND)){
 				inventory.toggleState("Car", Car.LOCKED);
 				inventory.toggleState("Car", Car.UNLOCKED);
 			}
 
-			textField.text+="Open car? "+inventory.status("Car", Car.UNLOCKED|Key.FOUND)+"\n";
+			textField.text+="Open car? "+inventory.status("Car", Car.UNLOCKED)+"\n";
 
 		}
 	}
