@@ -42,11 +42,9 @@ package items.core {
 			return  slots[name] as GameObject;
 		}
 
-		public function status(name:String, state:*):Boolean{
+		public function status(name:String, ...flags):Boolean{
 			if(slots[name]){
-				if(slots[name].state==state){
-					return true;
-				}
+				return  slots[name].hasFlags(flags);
 			}
 			return false;
 		}

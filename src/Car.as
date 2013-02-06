@@ -8,8 +8,8 @@ package {
 	import items.core.GameObject;
 
 	public class Car extends GameObject {
-		public static const LOCKED:String="locked";
-		public static const UNLOCKED:String="unlocked";
+		public static const LOCKED:uint=1 << 0;
+		public static const UNLOCKED:uint=2 << 0;
 
 		public function Car() {
 			super();

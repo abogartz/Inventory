@@ -7,6 +7,7 @@ package items.core {
 
 	import flash.display3D.textures.Texture;
 	import flash.utils.Dictionary;
+	import flash.utils.getDefinitionByName;
 
 	import mx.core.SoundAsset;
 
@@ -14,19 +15,23 @@ package items.core {
 
 		protected var inventory:Inventory=Inventory.getInstance();
 
-		private static var _instance:GameObject;
-		public var state:*;
 		public var name:String;
+		protected var bitFlag:BitFlag;
 
 		public function GameObject() {
 		}
 
-		public function changeState(state:*):void {
-			this.state=state;
+		public function changeState(... flags ):void {
+			bitFlag.toggleFlags(flags);
 		}
+
+		 public function hasFlags( ... flags ):Boolean{
+			 return bitFlag.hasFlags(flags);
+		 }
 
 		//override this to add parameters
 		public function init():GameObject {
+			bitFlag = new BitFlag(getDefinitionByName(name) as Class);
 			return this;
 		}
 	}

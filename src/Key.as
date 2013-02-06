@@ -8,8 +8,9 @@ package {
 	import items.core.GameObject;
 
 	public class Key extends GameObject {
-		public static const MISSING:String="missing";
-		public static const FOUND:String="found";
+
+		public static const MISSING:uint=1 << 0;
+		public static const FOUND:uint=2 << 0;
 
 		public function Key() {
 			super();
