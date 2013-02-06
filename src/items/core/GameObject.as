@@ -21,7 +21,7 @@ package items.core {
 		public function GameObject() {
 		}
 
-		public function changeState(... flags ):void {
+		public function toggleState(... flags ):void {
 			bitFlag.toggleFlags(flags);
 		}
 

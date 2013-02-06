@@ -49,10 +49,10 @@ package items.core {
 			return false;
 		}
 
-		public function changeState(name:String, state:*):void {
+		public function toggleState(name:String, ...flags):void {
 			trace("[Item State Changed for] ",name);
 			if(slots[name]){
-				slots[name].changeState(state);
+				slots[name].toggleState(flags);
 			}
 		}
 

@@ -17,17 +17,19 @@ package {
 			inventory.add(new Car().init());
 			inventory.add(new Key().init());
 
-			inventory.changeState("Car", Car.LOCKED);
-			inventory.changeState("Key", Key.MISSING);
+			inventory.toggleState("Car", Car.LOCKED);
+			inventory.toggleState("Key", Key.MISSING);
 
 			textField.text+="Open car? "+inventory.status("Car", Car.UNLOCKED|Key.FOUND)+"\n";
 
-			inventory.changeState("Key", Key.FOUND);
+			inventory.toggleState("Key", Key.FOUND);
+			inventory.toggleState("Key", Key.MISSING);
 
 			textField.text+="Open car? "+inventory.status("Car", Car.UNLOCKED|Key.FOUND)+"\n";
 
 			if(inventory.status("Key", Key.FOUND)){
-				inventory.changeState("Car", Car.UNLOCKED);
+				inventory.toggleState("Car", Car.LOCKED);
+				inventory.toggleState("Car", Car.UNLOCKED);
 			}
 
 			textField.text+="Open car? "+inventory.status("Car", Car.UNLOCKED|Key.FOUND)+"\n";
